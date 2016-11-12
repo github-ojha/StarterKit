@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "JavaScript development starter kit",
   "scripts": {
-    "prestart": "node buildScripts/startMessage.js",
-    "start": "node buildScripts/srcServer.js",
+    "prestart": "babel-node buildScripts/startMessage.js",
+    "start": "babel-node buildScripts/srcServer.js",
     "security-check":"nsp check",
     "local-tunnel" : "lt --port 8000 --subdomain neeraj",
     "share": "npm-run-all --parallel start local-tunnel"
