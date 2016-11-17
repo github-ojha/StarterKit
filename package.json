@@ -8,6 +8,7 @@
     "startserver": "babel-node buildScripts/srcServer.js",
     "lint": "esw webpack.config.* src buildScripts --color",
     "lint:watch": "npm run lint -- --watch",
+    "test": "mocha --reporter progress buildScripts/testSetup.js \"src/**/*.test.js\"",
     "security-check":"nsp check",
     "local-tunnel" : "lt --port 8000 --subdomain neeraj",
     "share": "npm-run-all --parallel start local-tunnel"
