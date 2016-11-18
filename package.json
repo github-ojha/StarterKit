@@ -4,11 +4,12 @@
   "description": "JavaScript development starter kit",
   "scripts": {
     "prestart": "babel-node buildScripts/startMessage.js",
-    "start" : "npm-run-all --parallel security-check startserver lint:watch",
+    "start" : "npm-run-all --parallel security-check startserver lint:watch test:watch",
     "startserver": "babel-node buildScripts/srcServer.js",
     "lint": "esw webpack.config.* src buildScripts --color",
     "lint:watch": "npm run lint -- --watch",
     "test": "mocha --reporter progress buildScripts/testSetup.js \"src/**/*.test.js\"",
+    "test:watch" : "npm run test -- --watch",
     "security-check":"nsp check",
     "local-tunnel" : "lt --port 8000 --subdomain neeraj",
     "share": "npm-run-all --parallel start local-tunnel"
