@@ -4,7 +4,7 @@ import open from 'open';
 import compression from 'compression';
 // removed webpack related packages as we will be serving static files for production
 /* eslint-disable no-console */
-const port = 8000;
+const port = 9000;
 const app = express();
 
 app.use(compression()); //this enables gzip compressions in express;

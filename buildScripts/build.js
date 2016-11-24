@@ -3,10 +3,10 @@ import webpack from 'webpack';
 import webpackConfig from '../webpack.config.prod';
 import chalk from 'chalk';
 
-process.env.NODE_ENV = 'production'; //this is improt as .babelrs and other libraries configure some dev specific settings
+process.env.NODE_ENV = 'production'; //this is important as .babelrc and other libraries configure some dev specific settings
 
 console.log(chalk.blue('Generating minified bundle for production.this will take a moment...'))
-webpack(webpackConfig).run((err, stats) => { // these states would provide details fro webpack build
+webpack(webpackConfig).run((err, stats) => { // these states would provide details for webpack build
 if(err){
   console.log(chalk.red(err));
   return 1
@@ -15,7 +15,7 @@ if(err){
 const jsonStats = stats.toJson();
 
 if(jsonStats.hasErrors){
-  return jsonStats.erros.map(error => console.log(chalk.red(error)));
+  return jsonStats.errors.map(error => console.log(chalk.red(error)));
 }
 
 if(jsonStats.hasWarnings){
@@ -24,7 +24,7 @@ if(jsonStats.hasWarnings){
 }
 
 console.log(`webpack stats: ${stats}`);
-console.log(chalk.green(`Your app has been built for production and out to /dist folder`));
+console.log(chalk.green(`Your app has been built for production and output to /dist folder`));
 return 0;
 });
 
