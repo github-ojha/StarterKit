@@ -18,7 +18,7 @@ export default {
   plugins: [
      // create html file dynamically that has ref to bundle.js
     new HtmlWebpackPlugin({
-         template :'src/iindex.html',
+         template :'src/index.html',
          inject :true
     }),
     //eliminate duplicagte packages when creating bundle
